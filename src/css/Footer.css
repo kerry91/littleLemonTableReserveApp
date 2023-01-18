@@ -1,0 +1,14 @@
+footer {
+    display: flex;
+}
+
+footer div {
+  flex: auto;
+  font-size: 12px;
+}
+
+footer img{
+  width:50px;
+  height:75px;
+}
+

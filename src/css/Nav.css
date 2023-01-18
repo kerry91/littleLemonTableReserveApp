@@ -1,0 +1,15 @@
+nav{
+    display: block;
+    font-size: 12px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+  }

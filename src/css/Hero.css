@@ -1,0 +1,16 @@
+container {
+    display: flex;
+  }
+  
+  container div {
+  flex:1;
+  }
+
+  container .button{
+    background-color: black;
+    color: aliceblue;
+    width: 125px;
+    height: 25px;
+    text-align: center;
+    padding: 10px 0 5px 0;
+  }
