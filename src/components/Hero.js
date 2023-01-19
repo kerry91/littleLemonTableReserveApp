@@ -3,11 +3,11 @@ import '../css/Hero.css';
 const Hero = (props) => {
     return (
         <>
-        <container>
+        <container class="hero-container">
             <div>
-                <h3>Little Lemon</h3>
-                <h4>Chicago</h4>
-                <p>{props.desc}</p>
+                <h2>Little Lemon</h2>
+                <h3>Chicago</h3>
+                <p class="description">{props.desc}</p>
                 <p class="button">{props.button}</p>
             </div>
             <div>
