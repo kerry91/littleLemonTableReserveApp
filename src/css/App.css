@@ -6,14 +6,18 @@ body{
 header {
     display: flex;
     padding: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-header div {
-  flex:auto;
-  font-size: 12px;
-}
 
 header img {
   width: 8rem;
   height:2.5em;
+}
+
+nav{
+  display: block;
+  font-size: 12px;
+  gap: 10px;
 }

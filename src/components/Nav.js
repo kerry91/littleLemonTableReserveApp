@@ -1,19 +1,21 @@
 import '../css/Nav.css';
+import {NavLink} from "react-router-dom";
+
 
 const Nav = () => {
     return(
         <>
-        <nav>
-            <ul>
-                <li><a href="/home">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/menu">Menu</a></li>
-                <li><a href="/reservations">Reservations</a></li>
-                <li><a href="/order-online">Order Online</a></li>
-                <li><a href="/login">Login</a></li>
-            </ul>
-        </nav>    
+            <ul id="navbar">
+                <li><NavLink exact to="/">Home</NavLink></li>
+                <li><NavLink exact to="/about">About</NavLink></li>
+                <li><NavLink exact to="/menu">Menu</NavLink></li>
+                <li><NavLink exact to="/reservations">Reservations</NavLink></li>
+                <li><NavLink exact to="/order-online">Order Online</NavLink></li>
+                <li><NavLink exact to="/login">Login</NavLink></li>
+            </ul> 
         </>
+
+
     )
 }
 

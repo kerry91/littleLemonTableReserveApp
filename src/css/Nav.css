@@ -1,15 +1,16 @@
-nav{
-    display: block;
-    font-size: 12px;
-}
-
-nav ul {
+#navbar ul {
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
   flex-wrap: wrap;
-  padding: 0;
   }
   
-  nav li {
-    display: inline-block;
+  #navbar li {
+    list-style: none;
+    display: inline-flex;
+    margin-left: 25px;
+  }
+
+  #navbar a{
+    text-decoration: none;
   }
