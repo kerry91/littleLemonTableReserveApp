@@ -1,35 +1,38 @@
-import '../css/Testimonials.css';
-import image1 from '../assets/greek salad.jpg'
-import image2 from '../assets/lemon dessert.jpg'
+import "../css/Testimonials.css";
+import image2 from "../assets/lemon dessert.jpg";
 
 const Testimonials = () => {
-    return (
-        <>
-        <h4 id="testimonials-title">Testimonials</h4>
-        <container class="testimonials-container">
-            <div class="item">
-                <p>Title</p>
-                <img src={image1} alt="greek salad" />
-                <p>Great</p>
-            </div>
-            <div class="item">
+  return (
+    <>
+      <section class="testimonials-container">
+        <section class="testimonials-wrapper">
+          <div class="title">
+            <h3 id="testimonials-title">Testimonials</h3>
+          </div>
+          <div class="item1">
+            <p>Title</p>
+            <img src={image2} alt="greek salad" />
+            <p>Great</p>
+          </div>
+          <div class="item2">
             <p>Title</p>
             <img src={image2} alt="lemon dessert" />
             <p>Great</p>
-            </div>
-            <div class="item">
+          </div>
+          <div class="item3">
             <p>Title</p>
             <img src={image2} alt="lamb kebabs" />
             <p>Great</p>
-            </div>
-            <div class="item">
+          </div>
+          <div class="item4">
             <p>Title</p>
             <img src={image2} alt="lemon dessert" />
             <p>Great</p>
-            </div>
-        </container>
-        </>
-    )
-}
+          </div>
+        </section>
+      </section>
+    </>
+  );
+};
 
-export default Testimonials
+export default Testimonials;

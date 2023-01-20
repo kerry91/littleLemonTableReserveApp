@@ -1,21 +1,29 @@
+.title { grid-area: title; }
+.item1 { grid-area: item1; }
+.item2 { grid-area: item2; }
+.item3 { grid-area: item3; }
+.item4 { grid-area: item4; }
+
 .testimonials-container{
+    display: flex;
+    justify-content: center;
+}
+
+.testimonials-container >.testimonials-wrapper{
     display: grid;
-    grid-template-areas: "item item item item";
-    gap: 10px;
+    grid-template-areas:
+    "title title title title title title"
+    "item1 item2 item3 item4 space space";
     font-size: 14px;
-    margin-bottom: 50px;
+    margin: 50px 0 50px 0;
     padding: 15px;
 }
 
-.testimonials-container .item{
-    padding: 5px;
+.testimonials-container img {
+    width: 99%;
+    height: auto;
 }
 
-.testimonials-container .item img {
-    width: 90%;
-    height: 60%;
-}
-
-#testimonials-title {
-    padding: 15px;
+.testimonials-container .title > h3 {
+    text-align: center;
 }
