@@ -1,6 +1,10 @@
+import { NavLink } from "react-router-dom";
+import { Formik, Form} from 'formik';
+import * as Yup from 'yup';
 import "../css/TableBooking.css";
 import Hero from "./Hero";
-import { NavLink } from "react-router-dom";
+
+import { MyTextInput, MyTextArea } from "../helpers/FormInputs";
 
 const Form2 = () => {
   return (
@@ -10,62 +14,86 @@ const Form2 = () => {
       </section>
 
       <section>
-        <form id="form2">
-          <h3>Sign in to earn points</h3>
-          <input
-            type="text"
-            id="fname"
-            name="firstname"
-            placeholder="First Name"
-            required
-          />
-          <br />
-          <input
-            type="text"
-            id="lname"
-            name="lastname"
-            placeholder="Last Name"
-            required
-          />
-          <br />
-          <input
-            type="tel"
-            id="number"
-            name="number"
-            placeholder="Number"
-            required
-          />
-          <br />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            required
-          />
-          <br />
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-            required
-          />
-          <br />
-          <textarea
-            rows="4"
-            cols="50"
-            form="form2"
-            placeholder="Add a special request (Optional)"
-            required
-          />
-          <br />
-          <br /> <br /> <br />
-          <NavLink exact to="/form3">
-            <button>Lets Go</button>
-          </NavLink>
-        </form>
+      <Formik
+         initialValues={{
+           firstName: '',
+           lastName: '',
+           number: '',
+           email: '',
+           password: '',
+           comment: '',
+         }}
+         validationSchema={Yup.object({
+           firstName: Yup.string()
+             .max(100, 'Must be 100 characters or less')
+             .required('First name is required'),
+           lastName: Yup.string()
+             .max(100, 'Must be 100 characters or less')
+             .required('Last name is required'),
+           email: Yup.string()
+             .email('Invalid email address')
+             .required('Email is required'),
+          number: Yup.string()
+             .required('Contact number is required'),
+          password: Yup.string()
+             .required('Password is required'),
+
+         })}
+         onSubmit={(values) => {
+         }}
+       >
+        {({ isSubmitting }) => (
+         <Form>
+           <MyTextInput
+             label=""
+             name="firstName"
+             type="text"
+             placeholder="First Name"
+           />
+ 
+           <MyTextInput
+             label=""
+             name="lastName"
+             type="text"
+             placeholder="Last Name"
+           />
+
+          <MyTextInput
+             label=""
+             name="number"
+             type="tel"
+             placeholder="Contact Number"
+           />
+ 
+           <MyTextInput
+             label=""
+             name="email"
+             type="email"
+             placeholder="Email"
+           />
+
+            <MyTextInput
+             label=""
+             name="password"
+             type="password"
+             placeholder="Password"
+           />
+
+          <MyTextArea
+             label=""
+             name="comment"
+             placeholder="Add a special request (Optional)"
+           />
+ 
+ 
+           <button type="submit" disabled={isSubmitting}>
+        {isSubmitting === false ? "Lets Go"  : <NavLink exact to="/form3">Lets Go</NavLink>}
+        </button>
+         </Form>
+          )}
+       </Formik>
       </section>
+
     </>
   );
 };

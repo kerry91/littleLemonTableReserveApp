@@ -1,53 +1,129 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import React from "react";
+import { Formik, Form} from 'formik';
+import * as Yup from 'yup';
+import "../css/TableBooking.css";
+import { MyTextInput, MySelect, MyRadio } from "../helpers/FormInputs";
+
 
 const Form1 = () => {
+
+  const [user, setUser] = React.useState([]);
+
+  const fetchData = () => {
+    fetch()
+      .then((response) => response.json())
+      .then((data) => setUser(data));
+  };
+
+  React.useEffect(() => {
+    fetchData();
+    console.log(user)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // eslint-disable-next-line no-unused-vars
+  const [availableTimes, setAvailableTimes] = useState(
+    [
+    {
+      time: "17:00"
+    },
+    {
+      time: "18:00"
+    },
+    {
+      time: "19:00"
+    },
+    {
+      time: "20:00"
+    },
+    {
+      time: "21:00"
+    }
+  ]
+    )
+
+  const timeOptions = availableTimes.map((timeOption) => {
+    return (
+      <option>{timeOption.time}</option>
+    )
+  });
+
   return (
     <>
-      <form>
-        <input type="date" value="today" required />
-        <br />
-        <input type="time" id="appt" name="appt" required />
-        <br />
-        <select name="seats" id="seats" required>
-          <option value="default">Number of diners</option>
-          <option value="one">1</option>
-          <option value="two">2</option>
-          <option value="three">3</option>
-          <option value="four">4</option>
-        </select>
-        <br />
-        <select name="occasion" id="occasion" required>
-          <option value="default">Occasion</option>
-          <option value="birthday">Birthday</option>
-          <option value="anniversary">Anniversary</option>
-          <option value="engagement">Engagement</option>
-        </select>
-        <br />
-        <h3>Seating options</h3>
-        <label for="standard">Standard</label>{" "}
-        <input
-          type="radio"
-          id="standard"
-          name="seating-options"
-          value="Standard"
-          required
-        />
-        <br />
-        <br />
-        <label for="outside">Outside</label>
-        <input
-          type="radio"
-          id="outside"
-          name="seating-options"
-          value="Outside"
-          required
-        />
-        <br /> <br /> <br />
-        <NavLink exact to="/form2">
-          <button type="submit">Lets Go</button>
-        </NavLink>
-      </form>
-    </>
+    <Formik
+         initialValues={{
+           date: '',
+           time: '',
+           occasion: '',
+           seats: '',
+           seatingOptions: false,
+         }}
+         validationSchema={Yup.object({
+           date: Yup.string()
+             .required('Choose a date'),
+
+             time: Yup.string()
+             .required('Choose a time'),
+
+             occasion: Yup.string()
+             .oneOf(
+               ['occasion1', 'occasion2', 'occasion3'],
+               'Invalid occasion'
+             )
+             .required('Choose an occasion'),
+
+             seats: Yup.string()
+             .oneOf(
+               ['seats1', 'seats2', 'seats3', 'seats4'],
+               'Invalid seat number'
+             )
+             .required('Choose an occasion'),
+         })}
+         onSubmit={(values) => {
+         }}
+       >
+        {({ isSubmitting }) => (
+         <Form>
+           <MyTextInput
+             label=""
+             name="date"
+             type="date"
+             placeholder="Date"
+           />
+ 
+           <MySelect label="" name="time">
+            {timeOptions}
+           </MySelect>
+
+           <MySelect label="" name="occasion">
+          <option value="occasion1">Birthday</option>
+          <option value="occasion2">Anniversary</option>
+          <option value="occasion3">Engagement</option>
+           </MySelect>
+
+           <MySelect label="" name="seats">
+          <option value="seats1">1</option>
+          <option value="seats2">2</option>
+          <option value="seats3">3</option>
+          <option value="seats4">4</option>
+           </MySelect>
+
+           <MyRadio name="seatingOptions">
+             Standard
+           </MyRadio>
+           <MyRadio name="seatingOptions">
+             Outside
+           </MyRadio>
+          <br /> <br />
+           <button type="submit" disabled={isSubmitting}>
+        {isSubmitting === false ? "Lets Go"  : <NavLink exact to="/form2">Lets Go</NavLink>}
+        </button>
+         </Form>
+          )}
+       </Formik>
+  </>
   );
 };
 export default Form1;

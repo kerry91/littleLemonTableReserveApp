@@ -1,6 +1,10 @@
+import { NavLink } from "react-router-dom";
+import { Formik, Form} from 'formik';
+import * as Yup from 'yup';
 import "../css/TableBooking.css";
 import Hero from "./Hero";
-import { NavLink } from "react-router-dom";
+
+import { MyTextInput, MyRadio } from "../helpers/FormInputs";
 
 const Form3 = () => {
   return (
@@ -10,54 +14,68 @@ const Form3 = () => {
       </section>
 
       <section>
-        <form>
-          <h3>Booking Details</h3>
-          <input
-            type="text"
-            id="result"
-            name="result"
-            placeholder="Date - Time - Number of Diners"
-            required
-          />
-          <br />
-          <h3>Credit card details</h3>
-          <input
-            type="text"
-            id="cnumber"
-            name="cardnumber"
-            placeholder="Card Number"
-            required
-          />
-          <br />
-          <input
-            type="text"
-            id="cname"
-            name="cardname"
-            placeholder="First Name / Last Name"
-            required
-          />
-          <br />
-          <span>
-            <br />
-            <label for="expdate">Exp Date</label>
-            <label for="cvv">CVV</label>
-            <br />
-            <input type="text" id="expdate" name="expdate" required />
-            <input type="text" id="cvv" name="cvv" required />
-            <input type="text" id="cvv" name="cvv" required />
-          </span>
+      <Formik
+         initialValues={{
+           cardNumber: '',
+           cardName: '',
+           exp: '',
+           cvv: '',
+           sendOptions1: false,
+           sendOptions2: false,
+         }}
+         validationSchema={Yup.object({
+           cardNumber: Yup.string()
+             .required('Enter a card number'),
+             cardName: Yup.string()
+             .required('Enter a card name'),
+             exp: Yup.string()
+             .required('Enter an expiry date'),
+             cvv: Yup.string()
+             .required('Enter the card CVV number'),
+         })}
+         onSubmit={(values) => {
+         }}
+       >
+        {({ isSubmitting }) => (
+         <Form>
+           <MyTextInput
+             label=""
+             name="cardNumber"
+             type="text"
+             placeholder="Card Number"
+           />
+           <MyTextInput
+             label=""
+             name="cardName"
+             type="text"
+             placeholder="Card Name"
+           />
+           <MyTextInput
+             label=""
+             name="exp"
+             type="text"
+             placeholder="EXP."
+           />
+           <MyTextInput
+             label=""
+             name="cvv"
+             type="text"
+             placeholder="CVV"
+           />
+
+           <MyRadio name="sendOptions1">
+             Send my booking confirmation via text
+           </MyRadio>
+           <MyRadio name="sendOptions2">
+           end me booking confirmation via email
+           </MyRadio>
           <br /> <br />
-          <label for="send-text">Send me booking details via text</label>
-          <input type="radio" id="send-text" name="send" value="send-text" />
-          <br />
-          <br />
-          <label for="send-email">send me booking via email</label>
-          <input type="radio" id="send-email" name="send" value="send-email" />
-          <br /> <br /> <br />
-          <NavLink exact to="">
-            <button>Continue</button>
-          </NavLink>
-        </form>
+           <button type="submit" disabled={isSubmitting}>
+        {isSubmitting === false ? "Lets Go"  : <NavLink exact to="/formsuccess">Lets Go</NavLink>}
+        </button>
+         </Form>
+          )}
+       </Formik>
       </section>
     </>
   );
