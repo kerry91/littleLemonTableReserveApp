@@ -1,23 +1,26 @@
-.grid-container {
+.about {
+    margin: 0 auto;
     display: grid;
-    grid-template-columns:
-      "grid-item"
-      "grid-item"
-      "grid-item";
+    grid-gap: 1rem;
   }
 
-  .about-container {
-    display: grid;
-    grid-template-areas: "item item item item";
-    font-size: 14px;
-    padding: 15px;
+  @media (min-width: 600px) {
+    .about { 
+      grid-template-columns: repeat(2, 1fr); 
+    }
   }
 
-  .about-container .item img {
+  @media (min-width: 900px) {
+    .about { 
+      grid-template-columns: repeat(2, 1fr); 
+    }
+  }
+
+  .about .item img {
     width: 100%;
     height: 85%;
   }
 
-  .about-container .description {
+  .about .description {
     width: 50%;
   }

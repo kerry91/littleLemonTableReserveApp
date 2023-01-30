@@ -6,7 +6,7 @@ import image3 from "../assets/greek salad.jpg";
 const Specials = () => {
   return (
     <>
-      <section class="special-wrapper">
+      <section class="wrapper">
       <div class="special-title">
             <h3>Specials</h3>
             <button>Online Menu</button>

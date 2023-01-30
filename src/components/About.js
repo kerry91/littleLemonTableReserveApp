@@ -5,7 +5,8 @@ import image1 from "../assets/restaurant.jpg";
 const About = () => {
   return (
     <>
-      <container class="about-container">
+      <section class="wrapper">
+        <div class="about">
         <div class="item">
           <h2>Little Lemon</h2>
           <h3>Chicago</h3>
@@ -17,7 +18,8 @@ const About = () => {
         <div class="item">
           <img src={image1} alt="img" />
         </div>
-      </container>
+        </div>
+      </section>
     </>
   );
 };
