@@ -1,16 +1,16 @@
 .special-wrapper{
   display: flex;
   flex-direction: column;
+  padding: 1em;
 }
 
 .special-title h3 {
   float:left;
-  margin-left: 10px;
 }
 
 .special-title button {
   float: right;
-  margin: 10px 10px 0 0 ;
+  margin: 10px 2em 0 0 ;
   background-color: #f4ce14;
   border-radius: 1.5em;
   color: rgb(0, 0, 0);
