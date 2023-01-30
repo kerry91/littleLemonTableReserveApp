@@ -1,3 +1,7 @@
+.special-title{
+  width:80vw;
+}
+
 .special-title h3 {
   float:left;
 }
@@ -15,7 +19,7 @@
 }
 
   .special-card img {
-    height: 10em;
+    height: 15em;
     width: 100%;
   }
 
@@ -33,6 +37,9 @@
       height: 20em;
       width: 100%;
     }
+    .special-title{
+      width:90vw;
+    }
   }
 
   @media (min-width: 900px) {
@@ -42,6 +49,9 @@
     .special-card img {
       height: 20em;
       width: 100%;
+    }
+    .special-title{
+      width:90vw;
     }
   }
 
