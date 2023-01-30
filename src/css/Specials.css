@@ -1,18 +1,48 @@
+.special-wrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.special-title h3 {
+  float:left;
+  margin-left: 10px;
+}
+
+.special-title button {
+  float: right;
+  margin: 10px 10px 0 0 ;
+  background-color: #f4ce14;
+  border-radius: 1.5em;
+  color: rgb(0, 0, 0);
+  width: 125px;
+  height: 40px;
+  text-align: center;
+  padding: 10px 0 5px 15px;
+}
+
 .special-card {
     padding: 10px;
     height: 25rem;
     width: 22rem;
   }
 
-  .special-card > img {
+  .special-card img {
     height: 15em;
     width: 22rem;
   }
-  
   .specials {
     width: 100vw;
     margin: 0 auto;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+  /* Screen larger than 600px? 2 column */
+  @media (min-width: 600px) {
+    .specials { grid-template-columns: repeat(3, 1fr); }
+  }
+  
+  /* Screen larger than 900px? 3 columns */
+  @media (min-width: 900px) {
+    .specials { grid-template-columns: repeat(3, 1fr); }
+  }
+
