@@ -4,7 +4,7 @@ import React from "react";
 import { Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 import "../css/TableBooking.css";
-import { MySelect, MyRadio } from "../helpers/FormInputs";
+import { MySelect, MyRadio, MyTextInput } from "../helpers/FormInputs";
 
 
 const Form1 = () => {
@@ -86,30 +86,31 @@ const Form1 = () => {
        >
         {({ isSubmitting }) => (
          <Form>
-           <Field
+           <MyTextInput
              label="Select a Date"
              name="date"
              type="date"
              placeholder="Date"
            />
  
-           <MySelect label="" name="time">
+           <MySelect label="Select a Time" name="time">
             {timeOptions}
            </MySelect>
 
-           <MySelect label="" name="occasion">
+           <MySelect label="Select an Occasion" name="occasion">
           <option value="occasion1">Birthday</option>
           <option value="occasion2">Anniversary</option>
           <option value="occasion3">Engagement</option>
            </MySelect>
 
-           <MySelect label="" name="seats">
+           <MySelect label="Select Number of Seats" name="seats">
           <option value="seats1">1</option>
           <option value="seats2">2</option>
           <option value="seats3">3</option>
           <option value="seats4">4</option>
            </MySelect>
 
+            <label htmlFor="seatingOptions">Select a Seating Option</label>
            <MyRadio name="seatingOptions">
              Standard
            </MyRadio>

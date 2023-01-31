@@ -22,6 +22,10 @@ form > input[type=checkbox], input[type=radio]{
   float: right;
 }
 
+form label {
+  font-weight: 600;
+}
+
 form #exp, #cvv {
   width:31% !important;
   margin-right: 7px;
