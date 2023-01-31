@@ -4,7 +4,7 @@ import React from "react";
 import { Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 import "../css/TableBooking.css";
-import { MyTextInput, MySelect, MyRadio } from "../helpers/FormInputs";
+import { MySelect, MyRadio } from "../helpers/FormInputs";
 
 
 const Form1 = () => {
