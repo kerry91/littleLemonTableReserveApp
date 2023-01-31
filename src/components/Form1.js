@@ -91,7 +91,8 @@ const Form1 = () => {
              name="date"
              type="date"
              placeholder="Date"
-           />
+           >
+            </MyTextInput>
  
            <MySelect label="Select a Time" name="time">
             {timeOptions}
