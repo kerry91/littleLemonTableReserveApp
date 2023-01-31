@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import React from "react";
-import { Formik, Form} from 'formik';
+import { Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 import "../css/TableBooking.css";
 import { MyTextInput, MySelect, MyRadio } from "../helpers/FormInputs";
@@ -86,8 +86,8 @@ const Form1 = () => {
        >
         {({ isSubmitting }) => (
          <Form>
-           <MyTextInput
-             label=""
+           <Field
+             label="Select a Date"
              name="date"
              type="date"
              placeholder="Date"
