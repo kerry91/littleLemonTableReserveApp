@@ -87,13 +87,14 @@ const Form1 = () => {
         {({ isSubmitting }) => (
          <Form>
           <label htmlFor="date">Select a Date</label>
+          <br/>
            <Field
              label="Select a Date"
              name="date"
              type="date"
              placeholder="Date"
-           >
-            </Field>
+           />
+          <br />
  
            <MySelect label="Select a Time" name="time">
             {timeOptions}
