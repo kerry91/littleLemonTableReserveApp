@@ -13,13 +13,13 @@ import FormSuccess from './components/FormSucess';
 function App() {
   return (
     <>
-    <section class="grid-container">
+    <section className="grid-container">
     <BrowserRouter>
-      <header class="grid-item">
+      <header className="grid-item">
         <Header/>
         <Nav/>
       </header>
-      <main class="grid-item">
+      <main className="grid-item">
       <Routes>
       <Route path="/" element={<Main />}></Route>
       <Route path="/about" element={<Main />}></Route>
@@ -33,7 +33,7 @@ function App() {
       <Route path="/formsuccess" element={<FormSuccess />}></Route>
       </Routes>
       </main>
-      <footer class="grid-item">
+      <footer className="grid-item">
         <Footer/>
       </footer>
       </BrowserRouter>

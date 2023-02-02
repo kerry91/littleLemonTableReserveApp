@@ -3,16 +3,16 @@ import "../css/Hero.css";
 const Hero = (props) => {
   return (
     <>
-      <section class="hero-wrapper">
-        <div class="hero">
-          <div class="hero-card">
+      <section className="hero-wrapper">
+        <div className="hero">
+          <div className="hero-card">
             <h2>Little Lemon</h2>
             <h3>Chicago</h3>
-            <p class="description">{props.desc}</p>
-            <p class="button">{props.button}</p>
+            <p className="description">{props.desc}</p>
+            <p className="button">{props.button}</p>
+            <h2>{props.extraText}</h2>
           </div>
-          <div class="hero-card">
-          <h2>{props.extraText}</h2>
+          <div className="hero-card">
             <div>
               <img src={props.src} alt={props.alt} />
             </div>

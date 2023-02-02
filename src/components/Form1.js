@@ -1,67 +1,50 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 import React from "react";
-import { Formik, Form, Field} from 'formik';
+import { Formik, Form} from 'formik';
 import * as Yup from 'yup';
 import "../css/TableBooking.css";
-import { MySelect, MyRadio} from "../helpers/FormInputs";
+import { MySelect, MyRadio, MyTextInput} from "../helpers/FormInputs"
+import {fetchAPI, submitAPI} from '../api/Api'
+import { useReducer } from "react";
 
 
 const Form1 = () => {
 
-  const [user, setUser] = React.useState([]);
 
-  const fetchData = () => {
-    fetch()
-      .then((response) => response.json())
-      .then((data) => setUser(data));
-  };
-
-  React.useEffect(() => {
-    fetchData();
-    console.log(user)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // eslint-disable-next-line no-unused-vars
-  const [availableTimes, setAvailableTimes] = useState(
-    [
-    {
-      time: "17:00"
-    },
-    {
-      time: "18:00"
-    },
-    {
-      time: "19:00"
-    },
-    {
-      time: "20:00"
-    },
-    {
-      time: "21:00"
-    }
-  ]
-    )
-
-  const timeOptions = availableTimes.map((timeOption) => {
+  function updateTimes(date) {
     return (
-      <option>{timeOption.time}</option>
-    )
-  });
+        fetchAPI(date)
+    );
+}
+
+const output = fetchAPI(new Date());
+
+const [availableTimes] = useReducer(updateTimes, output);
+
+const [finalTime, setFinalTime] = React.useState(
+  availableTimes.map((times) => <option>{times}</option>)
+);
+
+
+// eslint-disable-next-line no-unused-vars
+function handleDateChange(date) {
+
+  setFinalTime(availableTimes.map((times) => <option>{times}</option>));
+}
+
 
   return (
     <>
     <Formik
          initialValues={{
-           date: '',
+           date: Date,
            time: '',
            occasion: '',
            seats: '',
            seatingOptions: false,
          }}
          validationSchema={Yup.object({
-           date: Yup.string()
+           date: Yup.date().default(() => new Date())
              .required('Choose a date'),
 
              time: Yup.string()
@@ -69,26 +52,26 @@ const Form1 = () => {
 
              occasion: Yup.string()
              .oneOf(
-               ['occasion1', 'occasion2', 'occasion3'],
+               ['birthday', 'anniversary', 'engagement'],
                'Invalid occasion'
              )
              .required('Choose an occasion'),
 
              seats: Yup.string()
              .oneOf(
-               ['seats1', 'seats2', 'seats3', 'seats4'],
+               ['1', '2', '3', '4'],
                'Invalid seat number'
              )
              .required('Choose an occasion'),
          })}
          onSubmit={(values) => {
-         }}
+          submitAPI(values);
+          console.log(submitAPI)
+        }}
        >
         {({ isSubmitting }) => (
-         <Form>
-          <label htmlFor="date">Select a Date</label>
-          <br/>
-           <Field
+         <Form >
+           <MyTextInput
              label="Select a Date"
              name="date"
              type="date"
@@ -97,20 +80,20 @@ const Form1 = () => {
           <br />
  
            <MySelect label="Select a Time" name="time">
-            {timeOptions}
+           {finalTime}
            </MySelect>
 
            <MySelect label="Select an Occasion" name="occasion">
-          <option value="occasion1">Birthday</option>
-          <option value="occasion2">Anniversary</option>
-          <option value="occasion3">Engagement</option>
+          <option value="birthday">Birthday</option>
+          <option value="anniversary">Anniversary</option>
+          <option value="engagement">Engagement</option>
            </MySelect>
 
            <MySelect label="Select Number of Seats" name="seats">
-          <option value="seats1">1</option>
-          <option value="seats2">2</option>
-          <option value="seats3">3</option>
-          <option value="seats4">4</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
            </MySelect>
 
             <label htmlFor="seatingOptions">Select a Seating Option</label>

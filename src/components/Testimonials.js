@@ -6,27 +6,27 @@ import image3 from "../assets/greek salad.jpg";
 const Testimonials = () => {
   return (
     <>
-    <section class="wrapper">
-    <div class="testimonial-title">
+    <section className="wrapper">
+    <div className="testimonial-title">
       <h3>Testimonials</h3>
     </div>
-   <div class="testimonials">
-  <div class="testimonial-card">
+   <div className="testimonials">
+  <div className="testimonial-card">
     <p>Title</p>
     <img src={image2} alt="image1"/>
     <p>Great</p>
     </div>
-  <div class="testimonial-card">
+  <div className="testimonial-card">
   <p>Title</p>
     <img src={image1} alt="image1"/>
     <p>Great</p>
   </div>
-  <div class="testimonial-card">
+  <div className="testimonial-card">
   <p>Title</p>
     <img src={image3} alt="image1"/>
     <p>Great</p>
   </div>
-  <div class="testimonial-card">
+  <div className="testimonial-card">
   <p>Title</p>
     <img src={image2} alt="image1"/>
     <p>Great</p>
