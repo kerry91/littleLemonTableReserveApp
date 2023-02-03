@@ -1,6 +1,6 @@
 import "../css/Hero.css";
 
-const Hero = (props) => {
+const HeroOther = (props) => {
   return (
     <>
       <section className="hero-wrapper">
@@ -8,8 +8,6 @@ const Hero = (props) => {
           <div className="hero-card">
             <h2>Little Lemon</h2>
             <h3>Chicago</h3>
-            <p className="description">{props.desc}</p>
-            <p className="button">{props.button}</p>
             <h2>{props.extraText}</h2>
           </div>
           <div className="hero-card">
@@ -23,4 +21,4 @@ const Hero = (props) => {
   );
 };
 
-export default Hero;
+export default HeroOther;

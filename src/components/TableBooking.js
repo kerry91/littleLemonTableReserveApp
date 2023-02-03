@@ -1,6 +1,6 @@
 import "../css/TableBooking.css";
 
-import Hero from "./Hero";
+import HeroOther from "./HeroOther";
 import heroImg1 from "../assets/restaurant chef B.jpg";
 
 import Form1 from "./Form1";
@@ -9,10 +9,10 @@ const TableBooking = () => {
   return (
     <>
       <section>
-        <Hero
+        <HeroOther
           extraText="Find a table for any occasion"
-          src2={heroImg1}
-          alt2="chef B"
+          src={heroImg1}
+          alt="chef B"
         />
       </section>
       <section>

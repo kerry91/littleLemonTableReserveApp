@@ -2,15 +2,18 @@ import { NavLink } from "react-router-dom";
 import { Formik, Form} from 'formik';
 import * as Yup from 'yup';
 import "../css/TableBooking.css";
-import Hero from "./Hero";
-
+import HeroOther from "./HeroOther";
 import { MyTextInput, MyRadio } from "../helpers/FormInputs";
+import { submitAPI } from "../api/Api";
+import heroImg1 from "../assets/restaurant chef B.jpg";
 
 const Form3 = () => {
   return (
     <>
       <section>
-        <Hero />
+        <HeroOther 
+        src2={heroImg1}
+        alt2="chef B"/>
       </section>
 
       <section>
@@ -34,6 +37,7 @@ const Form3 = () => {
              .required('Enter the card CVV number'),
          })}
          onSubmit={(values) => {
+          submitAPI(values);
          }}
        >
         {({ isSubmitting }) => (

@@ -2,15 +2,18 @@ import { NavLink } from "react-router-dom";
 import { Formik, Form} from 'formik';
 import * as Yup from 'yup';
 import "../css/TableBooking.css";
-import Hero from "./Hero";
-
+import HeroOther from "./HeroOther";
 import { MyTextInput, MyTextArea } from "../helpers/FormInputs";
+import { submitAPI } from "../api/Api";
+import heroImg1 from "../assets/restaurant chef B.jpg";
 
 const Form2 = () => {
   return (
     <>
       <section>
-        <Hero />
+        <HeroOther
+        src={heroImg1}
+        alt="chef B"/>
       </section>
 
       <section>
@@ -40,6 +43,8 @@ const Form2 = () => {
 
          })}
          onSubmit={(values) => {
+          submitAPI(values);
+          console.log(submitAPI)
          }}
        >
         {({ isSubmitting }) => (

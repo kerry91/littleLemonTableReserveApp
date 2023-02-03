@@ -17,7 +17,7 @@ const Main = () => {
             </NavLink>
           }
           src={heroImg1}
-          alt="bruchetta"
+          alt="Chef"
         />
       </section>
       <section>
