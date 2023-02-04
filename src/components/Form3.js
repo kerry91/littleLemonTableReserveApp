@@ -12,8 +12,8 @@ const Form3 = () => {
     <>
       <section>
         <HeroOther 
-        src2={heroImg1}
-        alt2="chef B"/>
+         src={heroImg1}
+         alt="chef B"/>
       </section>
 
       <section>
@@ -42,6 +42,7 @@ const Form3 = () => {
        >
         {({ isSubmitting }) => (
          <Form>
+          <h3>Credit Card Details</h3>
            <MyTextInput
              label=""
              name="cardNumber"
