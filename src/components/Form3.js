@@ -42,6 +42,10 @@ const Form3 = () => {
        >
         {({ isSubmitting }) => (
          <Form>
+          <h3>Booking Details</h3>
+          <section id="results">
+            Date:  Time:  Number of Diners:
+          </section>
           <h3>Credit Card Details</h3>
            <MyTextInput
              label=""
