@@ -1,3 +1,5 @@
+Link to figma: https://www.figma.com/file/yR6bROkxcIENuTGQA4PpF2/Little-Lemon-Reserve-a-Table?node-id=0%3A1&t=Dqqi6luaLMr5rZtK-1
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
