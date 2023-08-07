@@ -1,5 +1,5 @@
 Link to figma: https://www.figma.com/file/yR6bROkxcIENuTGQA4PpF2/Little-Lemon-Reserve-a-Table?node-id=0%3A1&t=Dqqi6luaLMr5rZtK-1
-<br>
+<br> <br>
 Verify this certificate at:
 https://coursera.org/verify/professional-cert/TJTSJLZNENKD
 
