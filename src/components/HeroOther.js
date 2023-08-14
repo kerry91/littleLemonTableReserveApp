@@ -4,6 +4,7 @@ const HeroOther = (props) => {
   return (
     <>
       <section className="hero-wrapper">
+        <section className="wrapper">
         <div className="hero">
           <div className="hero-card">
             <h2>Little Lemon</h2>
@@ -16,6 +17,7 @@ const HeroOther = (props) => {
             </div>
           </div>
         </div>
+      </section>
       </section>
     </>
   );

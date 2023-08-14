@@ -2,7 +2,6 @@ import './css/App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import Nav from './components/Nav';
 import TableBooking from './components/TableBooking';
 import Form2 from './components/Form2';
 import Form3 from './components/Form3';
@@ -17,7 +16,6 @@ function App() {
     <BrowserRouter>
       <header className="grid-item">
         <Header/>
-        <Nav/>
       </header>
       <main className="grid-item">
       <Routes>

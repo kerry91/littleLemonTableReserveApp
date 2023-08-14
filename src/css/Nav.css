@@ -8,9 +8,17 @@
   #navbar li {
     list-style: none;
     display: inline-flex;
-    margin-left: 25px;
+    margin: 0 4em 0 4em;
   }
 
   #navbar a{
     text-decoration: none;
+    color: black;
+    padding: 5px 8px 5px 8px;
+  }
+
+  #navbar a:hover{
+    background-color: #495E57;
+    color: aliceblue;
+    border-radius: 10%;
   }

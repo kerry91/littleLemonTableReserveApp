@@ -6,8 +6,16 @@ import HeroOther from "./HeroOther";
 import { MyTextInput, MyRadio } from "../helpers/FormInputs";
 import { submitAPI } from "../api/Api";
 import heroImg1 from "../assets/restaurant chef B.jpg";
+import dayjs from "dayjs";
 
 const Form3 = () => {
+  
+  const Form1 = localStorage.getItem('Form1');
+  const resultsForm1 = JSON.parse(Form1);
+
+  const shortDate = dayjs(resultsForm1.date).format("DD MMM YYYY")
+  console.log(resultsForm1.date)
+
   return (
     <>
       <section>
@@ -37,14 +45,16 @@ const Form3 = () => {
              .required('Enter the card CVV number'),
          })}
          onSubmit={(values) => {
-          submitAPI(values);
+          submitAPI(values, localStorage.clear());
          }}
        >
-        {({ isSubmitting }) => (
+        {({ isSubmitting}) => (
          <Form>
           <h3>Booking Details</h3>
           <section id="results">
-            Date:  Time:  Number of Diners:
+            Date:{shortDate} <br></br>
+            Time: {resultsForm1.time}<br></br> 
+            Number of Diners: {resultsForm1.seats}
           </section>
           <h3>Credit Card Details</h3>
            <MyTextInput

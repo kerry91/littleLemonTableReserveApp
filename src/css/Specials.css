@@ -4,6 +4,8 @@
 
 .special-title h3 {
   float:left;
+  color: black;
+  font-size: 30px;
 }
 
 .special-title button {

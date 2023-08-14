@@ -11,8 +11,7 @@ const About = () => {
           <h2>Little Lemon</h2>
           <h3>Chicago</h3>
           <p Name="description">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's
+            We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
           </p>
         </div>
         <div className="item">

@@ -8,7 +8,7 @@ import { useReducer, useState } from "react";
 
 
 const Form1 = () => {
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState('');
   const output = fetchAPI(new Date());
   const [availableTimes] = useReducer(updateTimes, output);
   
@@ -27,25 +27,26 @@ function handleDateChange(e) {
 
         var stringify = e.target.value;
         const date = new Date(stringify);
-
         updateTimes(date);
 
   setFinalTime(availableTimes.map((times) => <option>{times}</option>));
 }
 
 
+
+
   return (
     <>
     <Formik
          initialValues={{
-           date: Date(),
+           date: Date.now(),
            time: '',
            occasion: '',
            seats: '',
            seatingOptions: false,
          }}
          validationSchema={Yup.object({
-          date: Yup.date().required('Choose a date'),
+          date: Yup.string().required('Choose a date'),
           time: Yup.string().required('Choose a time'),
           occasion: Yup.string().oneOf(
                ['birthday', 'anniversary', 'engagement'],
@@ -59,14 +60,16 @@ function handleDateChange(e) {
          })}
          onSubmit={(values) => {
           submitAPI(values);
+          localStorage.setItem('Form1', JSON.stringify(values))
         }}
        >
         {({ isSubmitting }) => (
          <Form >
 
-         <MyTextInput label="Select a Date" name="date" type="date"
-         pattern="\d{4}-\d{2}-\d{2}"
-         value={date}
+         <MyTextInput label="Select a Date" name="selectedDate" type="date"
+         pattern="d{4}-d{2}-d{2}"
+         value= {date}
+         selected={date}
          onChange={handleDateChange} />
          <br/>
  

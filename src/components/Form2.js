@@ -44,7 +44,7 @@ const Form2 = () => {
          })}
          onSubmit={(values) => {
           submitAPI(values);
-          console.log(submitAPI)
+          localStorage.setItem('Form2', JSON.stringify(values))
          }}
        >
         {({ isSubmitting }) => (

@@ -8,7 +8,7 @@ const Specials = () => {
     <>
       <section className="wrapper">
       <div className="special-title">
-            <h3>Specials</h3>
+            <h3>This weeks specials!</h3>
             <button>Online Menu</button>
           </div>
         <div className="specials">
@@ -18,8 +18,7 @@ const Specials = () => {
               Pasta <span>$6.99</span>
             </p>
             <p>
-              Lorem ipsum dolum sum Lorem ipsum dolum sum Lorem ipsum dolum sum
-              Lorem ipsum dolum sum Lorem ipsum dolum sum
+            House-made pasta in our signature house-made ragu’
             </p>
             <p>Order to deliver</p>
           </div>
@@ -29,8 +28,7 @@ const Specials = () => {
               Lemon Cake <span>$10.99</span>
             </p>
             <p>
-              Lorem ipsum dolum sum Lorem ipsum dolum sum Lorem ipsum dolum sum
-              Lorem ipsum dolum sum Lorem ipsum dolum sum
+            This lemon cake uses both the zest and a hefty amount of fresh lemon juice to give the cake its tart, bright edge. 
             </p>
             <p>Order to deliver</p>
           </div>
@@ -40,8 +38,7 @@ const Specials = () => {
               Greek Salad <span>$6.99</span>
             </p>
             <p>
-              Lorem ipsum dolum sum Lorem ipsum dolum sum Lorem ipsum dolum sum
-              Lorem ipsum dolum sum Lorem ipsum dolum sum
+            A traditional Greek salad consists of sliced cucumbers, tomatoes, green bell pepper, red onion, olives, and feta cheese. 
             </p>
             <p>Order to deliver</p>
           </div>

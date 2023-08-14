@@ -10,7 +10,7 @@ const Main = () => {
     <>
       <section>
         <Hero
-          desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's"
+          desc="We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist."
           button={
             <NavLink exact to="/reserve-table">
               Reserve a table
