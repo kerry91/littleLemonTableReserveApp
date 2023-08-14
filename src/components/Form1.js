@@ -5,7 +5,6 @@ import "../css/TableBooking.css";
 import { MySelect, MyRadio, MyTextInput} from "../helpers/FormInputs"
 import {fetchAPI, submitAPI} from '../api/Api'
 import { useReducer, useState } from "react";
-import DatePicker from "react-datepicker";
 
 
 const Form1 = () => {
