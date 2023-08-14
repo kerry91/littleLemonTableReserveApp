@@ -5,6 +5,7 @@ import "../css/TableBooking.css";
 import { MySelect, MyRadio, MyTextInput} from "../helpers/FormInputs"
 import {fetchAPI, submitAPI} from '../api/Api'
 import { useReducer, useState } from "react";
+import DatePicker from "react-datepicker";
 
 
 const Form1 = () => {
@@ -39,14 +40,14 @@ function handleDateChange(e) {
     <>
     <Formik
          initialValues={{
-           date: Date.now(),
+           date: Date(),
            time: '',
            occasion: '',
            seats: '',
            seatingOptions: false,
          }}
          validationSchema={Yup.object({
-          date: Yup.string().required('Choose a date'),
+          //date: Yup.string().required('Choose a date'),
           time: Yup.string().required('Choose a time'),
           occasion: Yup.string().oneOf(
                ['birthday', 'anniversary', 'engagement'],
@@ -66,10 +67,11 @@ function handleDateChange(e) {
         {({ isSubmitting }) => (
          <Form >
 
-         <MyTextInput label="Select a Date" name="selectedDate" type="date"
-         pattern="d{4}-d{2}-d{2}"
-         value= {date}
-         selected={date}
+         <MyTextInput 
+         label="Select a Date" 
+         name="selectedDate" 
+         type="date"
+         value={date}
          onChange={handleDateChange} />
          <br/>
  
